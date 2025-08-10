@@ -22,7 +22,7 @@ DAY_01_DRUM_KIT/
 ├── index.html       # Main HTML structure
 ├── style.css        # Custom styling & animations
 ├── app.js           # Event handling & sound playback logic
-├── sounds/          # Audio files for each button (not included here)
+├── sounds/          # Audio files for each button
 └── README.md        # Documentation
 ```
 
@@ -32,8 +32,9 @@ DAY_01_DRUM_KIT/
 
 ### 1️⃣ Clone the repository
 ```bash
-git clone https://github.com/yourusername/soundboard.git
-cd soundboard
+git clone https://github.com/ripasap/JS_30.git
+cd JS_30
+cd DAY_01_DRUM_KIT
 ```
 
 Simply open index.html in your preferred browser.
