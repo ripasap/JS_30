@@ -11,7 +11,6 @@ Built with **HTML**, **CSS (Bulma)**, and **JavaScript**.
 - **Visual feedback**:
   - Hover animations on mouseover.
   - Outline highlight when triggered via keyboard.
-- **Responsive design** → Works on desktop and mobile devices.
 - Lightweight, no dependencies except Bulma CSS (via CDN).
 
 ---
