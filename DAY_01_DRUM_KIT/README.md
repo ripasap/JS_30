@@ -16,6 +16,19 @@ Built with **HTML**, **CSS (Bulma)**, and **JavaScript**.
 
 ---
 
+## 📂 Project Structure
+
+```
+DAY_01_DRUM_KIT/
+├── index.html       # Main HTML structure
+├── style.css        # Custom styling & animations
+├── app.js           # Event handling & sound playback logic
+├── sounds/          # Audio files for each button (not included here)
+└── README.md        # Documentation
+```
+
+---
+
 ## 🚀 Getting Started
 
 ### 1️⃣ Clone the repository
@@ -26,3 +39,4 @@ cd soundboard
 
 Simply open index.html in your preferred browser.
 No server setup needed.
+
