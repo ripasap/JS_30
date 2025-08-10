@@ -16,11 +16,13 @@ Built with **HTML**, **CSS (Bulma)**, and **JavaScript**.
 
 ---
 
----
-
 ## 🚀 Getting Started
 
 ### 1️⃣ Clone the repository
 ```bash
 git clone https://github.com/yourusername/soundboard.git
 cd soundboard
+```
+
+Simply open index.html in your preferred browser.
+No server setup needed.
