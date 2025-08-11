@@ -3,8 +3,10 @@
 A responsive, interactive drum kit web app where each pad plays a sound and animates in sync with the beat. 
 Built with **HTML**, **CSS (Bulma)**, and **JavaScript**.
 
+
 ---
 
+ 
 ## ✨ Features
 
 - **Mouse & Keyboard Support**  
@@ -16,7 +18,9 @@ Built with **HTML**, **CSS (Bulma)**, and **JavaScript**.
 - **Responsive Layout**  
   - Works on desktop, tablet, and mobile with adaptive sizing.
 
+
 ---
+
 
 ## ⚙ Customization
 
@@ -25,6 +29,10 @@ Built with **HTML**, **CSS (Bulma)**, and **JavaScript**.
   const bpm = 77; // Adjust this for faster/slower tempo
   ```
 - **Change Sounds — Replace the .wav files in the sounds/ folder with your own drum samples.**
+
+
+---
+
   
 ## 📂 Project Structure
 
@@ -37,7 +45,9 @@ DAY_01_DRUM_KIT/
 └── README.md        # Documentation
 ```
 
+
 ---
+
 
 ## 🚀 Getting Started
 
