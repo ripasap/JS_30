@@ -1,20 +1,31 @@
 # JAVASCRIPT_DRUM_KIT 🎵
 
-A fun, responsive web app where each button plays a unique sound when clicked **or** when its corresponding keyboard key is pressed.  
+A responsive, interactive drum kit web app where each pad plays a sound and animates in sync with the beat. 
 Built with **HTML**, **CSS (Bulma)**, and **JavaScript**.
 
 ---
 
 ## ✨ Features
-- **Mouse support** → Hover and click buttons to play sounds.
-- **Keyboard support** → Press assigned keys to trigger sounds.
-- **Visual feedback**:
-  - Hover animations on mouseover.
-  - Outline highlight when triggered via keyboard.
-- Lightweight, no dependencies except Bulma CSS (via CDN).
+
+- **Mouse & Keyboard Support**  
+  - Click pads or press assigned keys to trigger sounds.
+- **Auto-Play Mode**  
+  - Press `Space` to start/stop a pre-programmed beat at the set BPM.
+- **Realistic Drum Animation**  
+  - Pads compress, rebound, and subtly vibrate after each hit.
+- **Responsive Layout**  
+  - Works on desktop, tablet, and mobile with adaptive sizing.
 
 ---
 
+## ⚙ Customization
+
+- **Change BPM** — In `app.js`:
+  ```js
+  const bpm = 77; // Adjust this for faster/slower tempo
+  ```
+- **Change Sounds — Replace the .wav files in the sounds/ folder with your own drum samples.**
+  
 ## 📂 Project Structure
 
 ```
