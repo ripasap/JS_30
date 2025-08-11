@@ -24,6 +24,8 @@ document.querySelectorAll(".button").forEach(btn => {
         audio.currentTime = 0;
         audio.play();
         const key = document.querySelector(`button[data-key="${code}"]`);
+        key.classList.remove("key-active");
+        void key.offsetWidth;
         key.classList.add("key-active");
         setTimeout(() => key.classList.remove("key-active"), 150);
     });
@@ -45,6 +47,8 @@ function detect(e) {
     if (!audio) return;
     audio.currentTime = 0;
     audio.play();
+    key.classList.remove("key-active");
+    void key.offsetWidth;
     key.classList.add("key-active");
     setTimeout(() => key.classList.remove("key-active"), 150);
 }
@@ -57,6 +61,8 @@ function playSoundByKey(keyCode) {
     if (audio) {
         audio.currentTime = 0;
         audio.play();
+        key.classList.remove("key-active");
+        void key.offsetWidth;
         key.classList.add("key-active");
         setTimeout(() => key.classList.remove("key-active"), 150);
     }
@@ -69,7 +75,8 @@ const bpm = 77;
 const interval = (60 / bpm) * 1000 / 4; // 16th notes
 
 let beatInterval = null;
-
+const noteDuration = interval * 0.9; // 90% of beat length
+document.documentElement.style.setProperty('--drumHitDuration', `${noteDuration}ms`);
 function startBeat() {
     if (!beatInterval) {
         index = 0;
