@@ -6,55 +6,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DRUM-KIT</title>
     <link href="style.css" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="D:\JS_30\DAY_01_DRUM_KIT\istockphoto-952859100-612x612.jpg">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
 </head>
 
 <body>
-    <img src="D:\JS_30\DAY_01_DRUM_KIT\Gemini_Generated_Image_l9z9bzl9z9bzl9z9(1).png" class="fullscreen-bg">
+
+
+    <img src="D:\JS_30\DAY_01_DRUM_KIT\Gemini_Generated_Image_l9z9bzl9z9bzl9z9(1)(1).png" class="fullscreen-bg">
     <section>
         <div class="card">
             <div class="card-content">
                 <footer class="card-footer">
-                        <button data-key="65" style="display:flex; flex-direction:column; align-items:center;" class="button is-large is-link is-fullwidth is-outlined">
-                            <span style="font-size: 2rem;">A</span>
-                            <span>CLAP</span>
-                        </button>
-                        <button data-key="83" style="display:flex; flex-direction:column; align-items:center;" class="button is-large is-link is-fullwidth is-outlined">
-                            <span style="font-size: 2rem;">S</span>
-                            <span>HIHAT</span>
-                        </button>
-                        <button data-key="68"style="display:flex; flex-direction:column; align-items:center;" class="button is-large is-link is-fullwidth is-outlined">
-                            <span style="font-size: 2rem;">D</span>
-                            <span>KICK</span>
-                        </button>
-                        <button data-key="70" style="display:flex; flex-direction:column; align-items:center;" class="button is-large is-link is-fullwidth is-outlined">
-                            <span style="font-size: 2rem;">F</span>
-                            <span>OPENHAT</span>
-                        </button>
-                        <button data-key="71" style="display:flex; flex-direction:column; align-items:center;" class="button is-large is-link is-fullwidth is-outlined">
-                            <span style="font-size: 2rem;">G</span>
-                            <span>BOOM</span>
-                        </button>
-                        <button data-key="72" style="display:flex; flex-direction:column; align-items:center;" class="button is-large is-link is-fullwidth is-outlined">
-                            <span style="font-size: 2rem;">H</span>
-                            <span>RIDE</span>
-                        </button>
-                        <button data-key="74" style="display:flex; flex-direction:column; align-items:center;" class="button is-large is-link is-fullwidth is-outlined">
-                            <span style="font-size: 2rem;">J</span>
-                            <span>SNARE</span>
-                        </button>
-                        <button data-key="75" style="display:flex; flex-direction:column; align-items:center;" class="button is-large is-link is-fullwidth is-outlined">
-                            <span style="font-size: 2rem;">K</span>
-                            <span>TOM</span>
-                        </button>
-                        <button data-key="76" class="button is-large is-link is-fullwidth is-outlined" style="display:flex; flex-direction:column; align-items:center;">
-                            <span style="font-size: 2rem;">L</span>
-                            <span>TINK</span>
-                        </button>
+                    <button data-key="65" style="display:flex; flex-direction:column; align-items:center;"
+                        class="button is-large is-fullwidth">
+                        <span style="font-size: 2rem;">A</span>
+                        <span>CLAP</span>
+                    </button>
+                    <button data-key="83" style="display:flex; flex-direction:column; align-items:center;"
+                        class="button is-large is-fullwidth">
+                        <span style="font-size: 2rem;">S</span>
+                        <span>HIHAT</span>
+                    </button>
+                    <button data-key="68" style="display:flex; flex-direction:column; align-items:center;"
+                        class="button is-large is-fullwidth">
+                        <span style="font-size: 2rem;">D</span>
+                        <span>KICK</span>
+                    </button>
+                    <button data-key="70" style="display:flex; flex-direction:column; align-items:center;"
+                        class="button is-large is-fullwidth">
+                        <span style="font-size: 2rem;">F</span>
+                        <span>OPENHAT</span>
+                    </button>
+                    <button data-key="71" style="display:flex; flex-direction:column; align-items:center;"
+                        class="button is-large is-fullwidth">
+                        <span style="font-size: 2rem;">G</span>
+                        <span>BOOM</span>
+                    </button>
+                    <button data-key="72" style="display:flex; flex-direction:column; align-items:center;"
+                        class="button is-large is-fullwidth">
+                        <span style="font-size: 2rem;">H</span>
+                        <span>RIDE</span>
+                    </button>
+                    <button data-key="74" style="display:flex; flex-direction:column; align-items:center;"
+                        class="button is-large is-fullwidth">
+                        <span style="font-size: 2rem;">J</span>
+                        <span>SNARE</span>
+                    </button>
+                    <button data-key="75" style="display:flex; flex-direction:column; align-items:center;"
+                        class="button is-large is-fullwidth">
+                        <span style="font-size: 2rem;">K</span>
+                        <span>TOM</span>
+                    </button>
+                    <button data-key="76" class="button is-large is-fullwidth"
+                        style="display:flex; flex-direction:column; align-items:center;">
+                        <span style="font-size: 2rem;">L</span>
+                        <span>TINK</span>
+                    </button>
                 </footer>
             </div>
     </section>
+    <div id="help-btn">?</div>
 
+    <!-- Hidden Tip Popup -->
+    <div id="help-popup">
+        <strong>Controls:</strong><br>
+        Press <strong>Space</strong> to start/stop the auto-play beat.<br>
+        Or <strong>click/press any drum keys</strong> to create your own beat live!
+    </div>
     <audio data-key="65" src="D:\JS_30\DAY_01_DRUM_KIT\sounds/clap.wav"></audio>
     <audio data-key="83" src="D:\JS_30\DAY_01_DRUM_KIT\sounds/hihat.wav"></audio>
     <audio data-key="68" src="D:\JS_30\DAY_01_DRUM_KIT\sounds/kick.wav"></audio>
