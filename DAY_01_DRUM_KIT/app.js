@@ -9,12 +9,7 @@ const button = document.querySelectorAll('button');
 //     b.classList.add("key-active");
 //     setTimeout(() => key.classList.remove("key-active"), 150);
 // }
-const beat = [
-    68, 83, 83, 83, // 1
-    74, 83, 83, 83, // 2
-    68, 83, 83, 83, // 3
-    74, 83, 83, 83  // 4
-];
+
 document.querySelectorAll(".button").forEach(btn => {
     btn.addEventListener("click", () => {
         btn.blur(); // removes focus so key press animations still work
@@ -67,31 +62,95 @@ function playSoundByKey(keyCode) {
         setTimeout(() => key.classList.remove("key-active"), 150);
     }
 }
+const beat = [
+  [83, 68], // Step 1: Kick + Hat
+  [],     // Step 2: Hat
+  [83], // Step 3: Snare + Hat
+  [],     // Step 4: Hat
+  [83, 74],     // Step 5: Hat
+  [],     // Step 6: Hat
+  [83], // Step 7: Kick + Hat
+  [],       // Step 8: Rest
+  [83, 68], // Step 1: Kick + Hat
+  [],     // Step 2: Hat
+  [83], // Step 3: Snare + Hat
+  [],     // Step 4: Hat
+  [83, 74],     // Step 5: Hat
+  [],     // Step 6: Hat
+  [83], // Step 7: Kick + Hat
+  []    // Step 8: Rest
+];
 
-
-
-let index = 0;
-const bpm = 77;
+// BPM & timing
+const bpm = 90; // change if needed
 const interval = (60 / bpm) * 1000 / 4; // 16th notes
 
+let index = 0;
 let beatInterval = null;
-const noteDuration = interval * 0.9; // 90% of beat length
-document.documentElement.style.setProperty('--drumHitDuration', `${noteDuration}ms`);
-function startBeat() {
-    if (!beatInterval) {
-        index = 0;
-        beatInterval = setInterval(() => {
-            playSoundByKey(beat[index]);
-            index = (index + 1) % beat.length;
-        }, interval);
+
+// --- New play function that supports arrays ---
+function playStep(step) {
+  const keys = Array.isArray(step) ? step : [step];
+  keys.forEach(code => {
+    const audio = document.querySelector(`audio[data-key="${code}"]`);
+    const key = document.querySelector(`button[data-key="${code}"]`);
+    if (!audio) return;
+    audio.currentTime = 0;
+    audio.play();
+    if (key) {
+      key.classList.remove("key-active");
+      void key.offsetWidth;
+      key.classList.add("key-active");
+      setTimeout(() => key.classList.remove("key-active"), 150);
     }
+  });
+}
+
+// --- Button clicks ---
+document.querySelectorAll(".button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    btn.blur();
+    const code = parseInt(btn.dataset.key, 10);
+    playStep(code);
+  });
+});
+
+// --- Spacebar start/stop ---
+// let spaceClick = false;
+function detect(e) {
+  let code = e.keyCode;
+  if (code === 32) {
+    e.preventDefault();
+    spaceClick = !spaceClick;
+    if (spaceClick) {
+      startBeat();
+    } else {
+      stopBeat();
+    }
+    return;
+  }
+  playStep(code);
+}
+window.addEventListener('keydown', detect);
+
+// --- Beat control ---
+function startBeat() {
+  if (!beatInterval) {
+    index = 0;
+    beatInterval = setInterval(() => {
+      playStep(beat[index]);
+      index = (index + 1) % beat.length;
+    }, interval);
+  }
 }
 
 function stopBeat() {
-    clearInterval(beatInterval);
-    beatInterval = null;
+  clearInterval(beatInterval);
+  beatInterval = null;
 }
+
+// --- Help popup ---
 document.getElementById("help-btn").addEventListener("click", function () {
-    const popup = document.getElementById("help-popup");
-    popup.style.display = popup.style.display === "block" ? "none" : "block";
+  const popup = document.getElementById("help-popup");
+  popup.style.display = popup.style.display === "block" ? "none" : "block";
 });

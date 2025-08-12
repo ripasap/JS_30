@@ -1,4 +1,3 @@
-/* Layout improvements */
 .card-footer {
     display: flex;
     flex-wrap: wrap;
@@ -6,6 +5,8 @@
     gap: 0.5rem;
     /* Space between buttons */
     justify-content: center;
+    /* removes text select */
+    user-select: none;
 }
 
 /* Drum pad button styling */
@@ -24,82 +25,28 @@
 
 /* Hover effect */
 .card-footer .button:hover {
-    background-color: #2c2c2c;
     transform: translateY(-2px);
+    background-color: #3a3a3a;
+    border-color: #666 !important;
 }
-
-/* Active (when clicked or key pressed) */
-.card-footer .button:active,
-.card-footer .button.playing {
-    border-color: #ffcc00;
-    box-shadow: 0 0 10px #ffcc00;
-    background-color: #333;
-}
-
-/* Remove ugly text selection cursor */
-.card-footer .button {
-    user-select: none;
-}
-
 
 .key-active {
     outline: 3px solid #F3CA85;
     outline-offset: 2px;
-    /* transform: scale(1.05); */
-    transition: outline 0.1s ease-in-out;
+    transition: outline 0.5s ease-in-out;
+    /* animation: drumPadHit var(--drumHitDuration, 200ms) cubic-bezier(0.25, 0.8, 0.4, 1) both; */
+}
+.button.key-active span:first-child {
+    display: inline-block;
+    transform: scale(1.15);
+    transition: transform 0.1s ease;
 }
 
-.button.key-active {
-    animation: drumPadHit var(--drumHitDuration, 200ms) cubic-bezier(0.25, 0.8, 0.4, 1) both;
+/* Animate label text */
+.button.key-active span:last-child {
+    opacity: 0.85;
+    transition: opacity 0.1s ease;
 }
-
-@keyframes drumPadHit {
-    0% {
-        transform: scale(1) translateY(0);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-        background-color: #2b2b2b;
-    }
-
-    15% {
-        transform: scale(0.96) translateY(3px);
-        /* hit down */
-        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
-        background-color: #252525;
-    }
-
-    50% {
-        transform: scale(1.02) translateY(-1px);
-        /* rebound */
-        box-shadow: 0 8px 14px rgba(0, 0, 0, 0.25);
-        background-color: #2d2d2d;
-    }
-
-    65% {
-        transform: scale(1) translateY(0);
-        /* settle */
-    }
-
-    /* micro vibration */
-    70% {
-        transform: scale(1.01) translateY(-0.5px);
-    }
-
-    80% {
-        transform: scale(0.99) translateY(0.5px);
-    }
-
-    90% {
-        transform: scale(1.005) translateY(-0.25px);
-    }
-
-    100% {
-        transform: scale(1) translateY(0);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-        background-color: #2b2b2b;
-    }
-}
-
-
 
 /* Floating Help Button */
 #help-btn {
@@ -121,8 +68,6 @@
     z-index: 9999;
     transition: transform 0.2s ease;
     user-select: none;
-    /* Prevent text selection */
-    /* outline: none;   */
 }
 
 #help-btn:hover {
@@ -157,48 +102,6 @@
 #help-popup::before {
     margin-right: 0.4rem;
     font-size: 1.2rem;
-}
-
-
-/* Remove Bulma's blue styles */
-.button {
-    background-color: #2b2b2b !important;
-    border-color: #444 !important;
-    color: #f8f8f8 !important;
-    box-shadow: none !important;
-}
-
-/* Hover state */
-.button:hover {
-    background-color: #3a3a3a !important;
-    border-color: #666 !important;
-}
-
-/* Active (mouse down) state */
-.button:active {
-    background-color: #444 !important;
-    border-color: #ffcc00 !important;
-}
-
-/* Show outline ONLY when using keyboard navigation */
-.button:focus-visible {
-    outline: 3px solid #ffcc00;
-    /* nice gold outline */
-    outline-offset: 2px;
-}
-
-/* Prevent outline when clicked with mouse */
-.button:focus:not(:focus-visible) {
-    outline: none;
-}
-
-
-/* Default layout - all buttons in one row (or flex) */
-.card-footer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    justify-content: center;
 }
 
 /* Make 3 per row when screen < 1300px */
